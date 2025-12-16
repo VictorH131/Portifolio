@@ -123,3 +123,38 @@ if (track) {
     track.classList.add('carousel-auto');
   }
 }
+
+
+//* TEMA *//
+const toggleBtn = document.getElementById('themeToggle');
+const body = document.body;
+const icon = toggleBtn.querySelector('i');
+
+// carrega tema salvo (IGUAL AO SEU)
+const temaSalvo = localStorage.getItem('tema');
+
+if (temaSalvo === 'claro') {
+  body.classList.add('light');
+  icon.classList.remove('fa-moon');
+  icon.classList.add('fa-sun');
+} else {
+  icon.classList.remove('fa-sun');
+  icon.classList.add('fa-moon');
+}
+
+toggleBtn.addEventListener('click', () => {
+  body.classList.toggle('light');
+
+  if (body.classList.contains('light')) {
+    icon.classList.remove('fa-moon');
+    icon.classList.add('fa-sun');
+    localStorage.setItem('tema', 'claro');
+  } else {
+    icon.classList.remove('fa-sun');
+    icon.classList.add('fa-moon');
+    localStorage.setItem('tema', 'escuro');
+  }
+});
+
+
+

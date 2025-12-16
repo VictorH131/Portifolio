@@ -7,16 +7,47 @@
 
 :root {
   --roxo: #9b5cff;
-  --roxo-escuro: #1a0f2e;
-  --preto: #0a0612;
-  --fonte1: #eae6f7;
+  --roxo-escuro: #250b55;
+  --bg: #0a0612;
+  --texto: #eae6f7;
   --navbar-bg: #0a0612cc;
+  --typping: #cbb8ff;
 }
 
-body {
-  background: var(--preto);
-  color: var(--fonte1);
+body.light {
+  --bg: #f5f5f8;
+  --texto: #1a1a1a;
+  --roxo: #085b61;
+  --roxo-escuro: #66b8c7;
+  --navbar-bg: #e6e6e6cc;
+  --typping: #3e8e95;
 }
+
+.theme-btn {
+  background: transparent;
+  border: 2px solid var(--roxo);
+  color: var(--texto);
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.theme-btn:hover {
+  background: var(--roxo);
+  color: #fff;
+}
+
+
+
+body {
+  background: var(--bg);
+  color: var(--texto);
+}
+
 
 .navbar {
   position: fixed;
@@ -26,10 +57,45 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #0a0612cc;
+  background: var(--navbar-bg);
   backdrop-filter: blur(10px);
   z-index: 100;
 }
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 16px 30px;
+  }
+
+  .navbar ul {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    padding: 16px 20px;
+    flex-wrap: wrap;
+    row-gap: 12px;
+  }
+
+  .navbar ul {
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .navbar li a {
+    font-size: 0.9rem;
+  }
+
+  .theme-btn {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    border-width: 1.5px;
+  }
+}
+
 
 .logo {
   font-size: 1.4rem;
@@ -43,12 +109,18 @@ body {
 .navbar ul {
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 30px;
 }
 
+.navbar ul button {
+  margin-left: 10px;
+}
+
+
 .navbar a {
   text-decoration: none;
-  color: #eae6f7;
+  color: var(--texto);
   transition: 0.3s;
 }
 
@@ -61,7 +133,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle at top, #2a0b55, #0a0612);
+   background: radial-gradient(circle at top, var(--roxo-escuro), var(--bg));
   text-align: center;
 }
 
@@ -72,7 +144,7 @@ body {
 .hero h3 {
   margin: 15px 0 30px;
   font-weight: 400;
-  color: #cbb8ff;
+  color: var(--typping);
 }
 
 .roxo {
@@ -83,11 +155,11 @@ body {
   display: inline-block;
   padding: 12px 30px;
   border-radius: 30px;
-  background: linear-gradient(135deg, var(--roxo), #6a3dff);
+  background: linear-gradient(135deg, var(--roxo), var(--roxo-escuro),);
   color: #fff;
   text-decoration: none;
   font-weight: 600;
-  box-shadow: 0 0 25px rgba(155,92,255,0.4);
+  box-shadow: 0 0 5px var(--roxo);
   transition: 0.3s;
 }
 
@@ -114,8 +186,8 @@ body {
 footer {
   text-align: center;
   padding: 30px;
-  background: #07040d;
-  color: #aaa;
+  background: var(--bg);
+  color: var(--texto);
 }
 
 .trajetoria {
@@ -178,7 +250,7 @@ footer {
   background: var(--roxo-escuro);
   border-radius: 22px;
   text-decoration: none;
-  color: #eae6f7;
+  color: var(--texto);
   box-shadow: 0 0 35px rgba(155,92,255,0.18);
   transition: transform .4s, box-shadow .4s;
   overflow: hidden;
