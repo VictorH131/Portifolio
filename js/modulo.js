@@ -83,13 +83,13 @@ if (track) {
       titulo: 'Site Institucional Para Sistema de Votação – Vortex',
       desc: 'Site institucional desenvolvido para a empresa fictícia Vortex, com foco em apresentação institucional, organização de informações e identidade visual profissional.',
       img: 'img/projeto3.png',
-      link: ''
+      link: 'https://vortexweb.page.gd/'
     },
-    {  
-      titulo: '',
-      desc: '',
-      img: 'img/projeto5.png',
-      link: '#'
+    {
+      titulo: 'Player de Música Web - ',
+      desc: 'Player de música web, pensado para navegação fluida e imersiva, com layout moderno, responsivo e foco em experiência do usuário.',
+      img: 'img/projeto4.png',
+      link: ''
     }
   ];
 
